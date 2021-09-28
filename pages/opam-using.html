@@ -6,25 +6,31 @@
 
 <p>Opam is the package manager for the OCaml programming language, the language
 in which Coq is implemented.
-Opam 2 is the recommended version, and is assumed below.
+Opam 2.1 is the recommended version, and is assumed below.
 Instructions on
 <a href="https://opam.ocaml.org/doc/Install.html">how to install opam</a>
 itself are available on the opam website.
 The following command displays the version of opam you have installed:</p>
 
-<pre><code># Make sure opam version is 2.0.0 or above.
+<pre><code># Make sure opam version is 2.1.0 or above.
 opam --version
 </code></pre>
 
 <p>Follow the instructions below to install the last stable version of Coq and
 additional packages. The instructions target an opam newcomer.</p>
 
+<p>Note that these instructions will also work for Opam 2.0 but this may require you to manually install any external dependencies. Opam will inform you what these are if they are required.</p>
+
+<p>For some operating systems, Opam (>=2.1) might still be unable to install external dependencies, which will mean you have to install them yourself.</p>
+
 <h2 id="platform">The Coq platform scripts</h2>
 
 <p>The <a href="https://github.com/coq/platform">Coq platform</a>
 provides interactive scripts that allow installing Coq and a standard
 set of packages through opam without having to learn anything about
-opam.  We recommend that you use
+  opam.</p>
+
+<p>Especially if you are a first-time user, we recommend that you use
 these <a href="https://github.com/coq/platform">scripts</a>.  If you
 do, you can skip directly to <a href="#coq-packages">Using opam to
 install Coq packages</a> to learn how to add additional packages to
@@ -58,15 +64,7 @@ about switches and roots.
 
 <h2>Installing Coq</h2>
 
-<p>Depending on your operating system, installing Coq using opam
-may require you to first install some system packages.
-For example, on Debian / Ubuntu, the following command may list the <code>m4</code> system
-package, which can then be installed as follows:</p>
-
-<pre><code>sudo apt-get install m4
-</code></pre>
-
-<p>Note that installing Coq using opam will build it from sources,
+<p>To install Coq, simply run the following command. Note that installing Coq using opam will build it from sources,
 which will take several minutes to complete:</p>
 
 <pre><code># Pin the coq package to version <#CURRENTVERSION> and install it.
@@ -87,17 +85,10 @@ prints the expected version of Coq.</p>
 
 <p>You may also want to install CoqIDE. Note that this requires GTK+
 development files (<code>gtksourceview3</code>) to be available on the
-system. As for Coq, names of system packages to install can be
-determined using when running <code>opam install</code>:</p>
+  system. Opam (>=2.1) will ensure that these packages are installed (on most operating systems). To install CoqIDE, simply run:</p>
 
 <pre><code>opam install coqide
 </code></pre>
-
-<p><code>opam</code> will ask you if you want to continue with the installation, to which you can reply <code>n</code>.</p>
-
-<p>After the listed system packages have been installed, CoqIDE can be
-built and installed by running <code>opam install</code> again.</p>
-
 
 <p>There exist many <a href="/user-interfaces.html">alternative user
 interfaces / editor extensions</a> for Coq.  See their respective
@@ -139,7 +130,7 @@ different versions of OCaml and other packages (including Coq) via
 <h3 id="switch">Switches</h3>
 
 <p>Switches provide separate environments, with their own versions of OCaml and
-installed packages.</p>
+installed packages. More information about opam switches <a href="https://opam.ocaml.org/doc/Usage.html#opam-switch">can be found here</a>.</p>
 
 <p>The following command creates a switch named <code>with-coq</code> with OCaml
 <#OCAMLV>:</p>
@@ -185,5 +176,11 @@ in the following lines:
 <pre><code>export OPAMROOT=~/.opam-coq.<#CURRENTVERSION>
 eval $(opam env)
 </code></pre>
+
+
+<h2>I still need help!</h2>
+
+If the above does not work for you, or you are confused, then feel free to open a topic on <a href="https://coq.discourse.group">Discourse</a> or <a href="/community">our other communication channels</a>.
+
 
 <#include "incl/footer.html">

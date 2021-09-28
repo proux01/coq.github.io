@@ -19,7 +19,7 @@ let set_output_to_file f =
 let close_output () =
   if !out_channel != stdout then close_out !out_channel
 
-let output_string s = Pervasives.output_string !out_channel s
+let output_string s = output_string !out_channel s
 
 (*s Macros are stored in the hash table [macros]. *)
 
@@ -66,7 +66,7 @@ let do_file f file =
 
 # 68 "yamlpp-0.3/yamlpp.ml"
 let __ocaml_lex_tables = {
-  Lexing.lex_base = 
+  Lexing.lex_base =
    "\000\000\244\255\245\255\001\000\003\000\005\000\000\000\001\000\
     \000\000\084\000\162\000\240\000\062\001\140\001\246\255\218\001\
     \040\002\118\002\196\002\018\003\096\003\174\003\032\004\000\000\
@@ -78,7 +78,7 @@ let __ocaml_lex_tables = {
     \030\000\001\000\255\255\206\003\250\255\251\255\020\000\020\000\
     \173\000\007\000\224\010\046\011\255\255\236\000\124\011\206\011\
     \254\255\253\255\252\255";
-  Lexing.lex_backtrk = 
+  Lexing.lex_backtrk =
    "\255\255\255\255\255\255\011\000\011\000\011\000\011\000\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
@@ -90,7 +90,7 @@ let __ocaml_lex_tables = {
     \255\255\000\000\255\255\255\255\255\255\255\255\005\000\005\000\
     \005\000\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255";
-  Lexing.lex_default = 
+  Lexing.lex_default =
    "\001\000\000\000\000\000\255\255\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\000\000\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
@@ -102,7 +102,7 @@ let __ocaml_lex_tables = {
     \255\255\255\255\000\000\068\000\000\000\000\000\255\255\255\255\
     \255\255\255\255\255\255\077\000\000\000\077\000\255\255\255\255\
     \000\000\000\000\000\000";
-  Lexing.lex_trans = 
+  Lexing.lex_trans =
    "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\023\000\023\000\066\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
@@ -513,7 +513,7 @@ let __ocaml_lex_tables = {
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000";
-  Lexing.lex_check = 
+  Lexing.lex_check =
    "\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\023\000\023\000\065\000\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
@@ -924,7 +924,7 @@ let __ocaml_lex_tables = {
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255";
-  Lexing.lex_base_code = 
+  Lexing.lex_base_code =
    "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
@@ -936,7 +936,7 @@ let __ocaml_lex_tables = {
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\033\002\111\002\048\000\000\000\000\000\000\000\
     \000\000\000\000\000\000";
-  Lexing.lex_backtrk_code = 
+  Lexing.lex_backtrk_code =
    "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
@@ -948,7 +948,7 @@ let __ocaml_lex_tables = {
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000";
-  Lexing.lex_default_code = 
+  Lexing.lex_default_code =
    "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
@@ -960,7 +960,7 @@ let __ocaml_lex_tables = {
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000";
-  Lexing.lex_trans_code = 
+  Lexing.lex_trans_code =
    "\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\012\000\012\000\000\000\000\000\000\000\012\000\012\000\
     \023\000\023\000\034\000\034\000\000\000\000\000\000\000\000\000\
@@ -1072,7 +1072,7 @@ let __ocaml_lex_tables = {
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     \000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\000\
     ";
-  Lexing.lex_check_code = 
+  Lexing.lex_check_code =
    "\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\031\000\031\000\255\255\255\255\255\255\032\000\032\000\
     \038\000\038\000\045\000\045\000\255\255\255\255\255\255\255\255\
@@ -1184,7 +1184,7 @@ let __ocaml_lex_tables = {
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     \255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\255\
     ";
-  Lexing.lex_code = 
+  Lexing.lex_code =
    "\255\002\255\255\003\255\255\000\002\001\003\255\004\255\255\005\
     \255\255\000\004\001\005\255\006\255\255\007\255\255\000\006\001\
     \007\255\008\255\255\009\255\255\000\008\001\009\255\001\255\255\
@@ -1192,7 +1192,7 @@ let __ocaml_lex_tables = {
 }
 
 let rec process lexbuf =
-  lexbuf.Lexing.lex_mem <- Array.create 10 (-1) ;   __ocaml_lex_process_rec lexbuf 0
+  lexbuf.Lexing.lex_mem <- Array.make 10 (-1); __ocaml_lex_process_rec lexbuf 0
 and __ocaml_lex_process_rec lexbuf __ocaml_lex_state =
   match Lexing.new_engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
@@ -1289,50 +1289,52 @@ let
       ( output_string (lexeme lexbuf); process lexbuf )
 # 1291 "yamlpp-0.3/yamlpp.ml"
 
-  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; __ocaml_lex_process_rec lexbuf __ocaml_lex_state
+  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
+      __ocaml_lex_process_rec lexbuf __ocaml_lex_state
 
 and def_body lexbuf =
-    __ocaml_lex_def_body_rec lexbuf 56
+   __ocaml_lex_def_body_rec lexbuf 56
 and __ocaml_lex_def_body_rec lexbuf __ocaml_lex_state =
   match Lexing.engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
 # 143 "yamlpp-0.3/yamlpp.mll"
       ( () )
-# 1302 "yamlpp-0.3/yamlpp.ml"
+# 1303 "yamlpp-0.3/yamlpp.ml"
 
   | 1 ->
 # 145 "yamlpp-0.3/yamlpp.mll"
       ( eprintf "Error: Unterminated macro definition\n"; exit 1)
-# 1307 "yamlpp-0.3/yamlpp.ml"
+# 1308 "yamlpp-0.3/yamlpp.ml"
 
   | 2 ->
 # 147 "yamlpp-0.3/yamlpp.mll"
       ( Buffer.add_string mbuf (lexeme lexbuf); def_body lexbuf )
-# 1312 "yamlpp-0.3/yamlpp.ml"
+# 1313 "yamlpp-0.3/yamlpp.ml"
 
-  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; __ocaml_lex_def_body_rec lexbuf __ocaml_lex_state
+  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
+      __ocaml_lex_def_body_rec lexbuf __ocaml_lex_state
 
 and skip_until skip_tag level lexbuf =
-  lexbuf.Lexing.lex_mem <- Array.create 2 (-1) ;   __ocaml_lex_skip_until_rec skip_tag level lexbuf 67
+  lexbuf.Lexing.lex_mem <- Array.make 2 (-1); __ocaml_lex_skip_until_rec skip_tag level lexbuf 67
 and __ocaml_lex_skip_until_rec skip_tag level lexbuf __ocaml_lex_state =
   match Lexing.new_engine __ocaml_lex_tables __ocaml_lex_state lexbuf with
       | 0 ->
 let
 # 152 "yamlpp-0.3/yamlpp.mll"
                    tag
-# 1324 "yamlpp-0.3/yamlpp.ml"
+# 1326 "yamlpp-0.3/yamlpp.ml"
 = Lexing.sub_lexeme lexbuf (lexbuf.Lexing.lex_start_pos + 2) lexbuf.Lexing.lex_mem.(0) in
 # 153 "yamlpp-0.3/yamlpp.mll"
       ( let level = if tag = skip_tag then level+1 else level in 
 	skip_until skip_tag level lexbuf
       )
-# 1330 "yamlpp-0.3/yamlpp.ml"
+# 1332 "yamlpp-0.3/yamlpp.ml"
 
   | 1 ->
 let
 # 156 "yamlpp-0.3/yamlpp.mll"
                     tag
-# 1336 "yamlpp-0.3/yamlpp.ml"
+# 1338 "yamlpp-0.3/yamlpp.ml"
 = Lexing.sub_lexeme lexbuf (lexbuf.Lexing.lex_start_pos + 3) (lexbuf.Lexing.lex_curr_pos + -1) in
 # 157 "yamlpp-0.3/yamlpp.mll"
       ( if tag = skip_tag then 
@@ -1340,7 +1342,7 @@ let
 	else 
 	    skip_until skip_tag level lexbuf 
       )
-# 1344 "yamlpp-0.3/yamlpp.ml"
+# 1346 "yamlpp-0.3/yamlpp.ml"
 
   | 2 ->
 # 163 "yamlpp-0.3/yamlpp.mll"
@@ -1349,7 +1351,7 @@ let
 	else
 	  skip_until skip_tag level lexbuf 
       )
-# 1353 "yamlpp-0.3/yamlpp.ml"
+# 1355 "yamlpp-0.3/yamlpp.ml"
 
   | 3 ->
 # 169 "yamlpp-0.3/yamlpp.mll"
@@ -1359,20 +1361,21 @@ let
 	else
 	  skip_until skip_tag level lexbuf 
       )
-# 1363 "yamlpp-0.3/yamlpp.ml"
+# 1365 "yamlpp-0.3/yamlpp.ml"
 
   | 4 ->
 # 176 "yamlpp-0.3/yamlpp.mll"
       ( eprintf "*** warning: couldn't find end of flag %s\n" skip_tag; 
 	flush stderr )
-# 1369 "yamlpp-0.3/yamlpp.ml"
+# 1371 "yamlpp-0.3/yamlpp.ml"
 
   | 5 ->
 # 179 "yamlpp-0.3/yamlpp.mll"
       ( skip_until skip_tag level lexbuf )
-# 1374 "yamlpp-0.3/yamlpp.ml"
+# 1376 "yamlpp-0.3/yamlpp.ml"
 
-  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf; __ocaml_lex_skip_until_rec skip_tag level lexbuf __ocaml_lex_state
+  | __ocaml_lex_state -> lexbuf.Lexing.refill_buff lexbuf;
+      __ocaml_lex_skip_until_rec skip_tag level lexbuf __ocaml_lex_state
 
 ;;
 
@@ -1419,4 +1422,4 @@ let main () =
 let _ = Printexc.catch main ()
 
 
-# 1423 "yamlpp-0.3/yamlpp.ml"
+# 1426 "yamlpp-0.3/yamlpp.ml"

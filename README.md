@@ -7,6 +7,8 @@ This repository contains the static pages of the Coq website
 Pre-html sources are in `pages/` and `news/`, while final html files
 will be assembled in `dest/`.
 
+Note that links may not work locally, and pages will have to have `.html` appended to the URL in order to view them.
+
 ## Prerequisites
 The html files are pre-processed by [Yamlpp](http://www.lri.fr/~filliatr/yamlpp.en.html). A copy of
 yamlpp is included in this repository, we simply need an OCaml

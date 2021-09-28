@@ -46,7 +46,7 @@ h3 {
 a:link,
 a:visited {
 	color: #660403;
-	font-weight: normal;
+	font-weight: inherit;
 	text-decoration: none;
 }
 

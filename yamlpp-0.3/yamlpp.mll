@@ -39,7 +39,7 @@ let set_output_to_file f =
 let close_output () =
   if !out_channel != stdout then close_out !out_channel
 
-let output_string s = Pervasives.output_string !out_channel s
+let output_string s = output_string !out_channel s
 
 (*s Macros are stored in the hash table [macros]. *)
 

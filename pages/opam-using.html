@@ -59,14 +59,8 @@ about switches and roots.
 <h2>Installing Coq</h2>
 
 <p>Depending on your operating system, installing Coq using opam
-may require you to first install some system packages. The recommended way to determine
-the names of required system packages is via the <code>opam-depext</code> tool:</p>
-
-<pre><code>opam install opam-depext
-opam-depext coq
-</code></pre>
-
-<p>For example, on Debian / Ubuntu, this command may list the <code>m4</code> system
+may require you to first install some system packages.
+For example, on Debian / Ubuntu, the following command may list the <code>m4</code> system
 package, which can then be installed as follows:</p>
 
 <pre><code>sudo apt-get install m4
@@ -94,15 +88,16 @@ prints the expected version of Coq.</p>
 <p>You may also want to install CoqIDE. Note that this requires GTK+
 development files (<code>gtksourceview3</code>) to be available on the
 system. As for Coq, names of system packages to install can be
-determined using <code>opam-depext</code>:</p>
-
-<pre><code>opam-depext coqide</code></pre>
-
-<p>After the listed system packages have been installed, CoqIDE can be
-built and installed with the following command:</p>
+determined using when running <code>opam install</code>:</p>
 
 <pre><code>opam install coqide
 </code></pre>
+
+<p><code>opam</code> will ask you if you want to continue with the installation, to which you can reply <code>n</code>.</p>
+
+<p>After the listed system packages have been installed, CoqIDE can be
+built and installed by running <code>opam install</code> again.</p>
+
 
 <p>There exist many <a href="/user-interfaces.html">alternative user
 interfaces / editor extensions</a> for Coq.  See their respective

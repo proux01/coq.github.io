@@ -21,12 +21,17 @@ Coq and additional packages. The instructions target an opam
 newcomer.</p>
 
 <p>Note that these instructions will also work for Opam 2.0 but this
-may require you to manually install any external dependencies. Opam
-will inform you what these are if they are required.</p>
+may require you to manually install any external dependencies. In this
+case you will have to use <code>opam-depext</code> to see which
+external dependencies are missing.</p>
 
-<p>For some operating systems, Opam (>=2.1) might still be unable to
-install external dependencies, which will mean you have to install
-them yourself.</p>
+<p>For some operating systems, <code>opam</code>
+and <code>opam-depext</code> might still be unable to detect external
+dependencies, which will mean you have to check and install them
+yourself. To see more detailed information on external dependencies
+please consult
+the <a href="https://github.com/coq/coq/blob/master/INSTALL.md">INSTALL.md
+documentation in the Github repository</a>.</p>
 
 <h2 id="platform">The Coq platform scripts</h2>
 
@@ -35,7 +40,7 @@ provides interactive scripts that allow installing Coq and a standard
 set of packages through opam without having to learn anything about
 opam.</p>
 
-<p>Especially if you are a first-time user, we recommend that you use
+<p>If a standard setup works for you, then we recommend that you use
 these <a href="https://github.com/coq/platform">scripts</a>.  If you
 do, you can skip directly to <a href="#coq-packages">Using opam to
 install Coq packages</a> to learn how to add additional packages to
@@ -196,10 +201,9 @@ env)
 
 <h2>I still need help!</h2>
 
-If the above does not work for you, or you are confused, then feel
-free to open a topic
-on <a href="https://coq.discourse.group">Discourse</a>
-or <a href="/community">our other communication channels</a>.
+<p>If the above does not work for you, or you are confused, then feel
+free to open a topic on <a href="https://coq.zulipchat.com/">Zulip</a>
+or <a href="/community">our other communication channels</a>.</p>
 
 
 <#include "incl/footer.html">

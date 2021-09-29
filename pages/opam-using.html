@@ -58,7 +58,8 @@ the next section.</p>
 <p>Once opam is installed, it must be initialized before first
 usage:</p>
 
-<pre><code>opam init eval $(opam env)
+<pre><code>opam init
+eval $(opam env)
 </code></pre>
 
 <p><code>opam init</code> will prompt you to allow opam to set up
@@ -80,8 +81,8 @@ about switches and roots.
 installing Coq using opam will build it from sources, which will take
 several minutes to complete:</p>
 
-<pre><code># Pin the coq package to version <#CURRENTVERSION> and
-install it.  opam pin add coq <#CURRENTVERSION>
+<pre><code># Pin the coq package to version <#CURRENTVERSION> and install it.
+opam pin add coq <#CURRENTVERSION>
 </code></pre>
 
 <p>Pinning prevents opam from upgrading Coq automatically, which may
@@ -116,8 +117,7 @@ opam repository. The following command adds that repository to the
 current opam <a href="#switch">switch</a> (you can skip this step if
 you used the <a href="#platform">platform scripts</a>):</p>
 
-<pre><code>opam repo add coq-released
-https://coq.inria.fr/opam/released
+<pre><code>opam repo add coq-released https://coq.inria.fr/opam/released
 </code></pre>
 
 <p>The following command lists the names of all Coq packages along
@@ -154,14 +154,15 @@ be found here</a>.</p>
 <p>The following command creates a switch named <code>with-coq</code>
 with OCaml <#OCAMLV>:</p>
 
-<pre><code># Run one of the following depending on your version of
-opam opam switch create with-coq <#OCAMLV>
+<pre><code># Run one of the following depending on your version of opam
+opam switch create with-coq <#OCAMLV>
 </code></pre>
 
 <p>Change to an existing switch named <code>other-switch</code> with
 this command:</p>
 
-<pre><code>opam switch other-switch eval $(opam env)
+<pre><code>opam switch other-switch
+eval $(opam env)
 </code></pre>
 
 <h3>Roots</h3>
@@ -183,19 +184,18 @@ configuration of a single root.
 OPAMROOT=~/.opam-coq.<#CURRENTVERSION>
 
 # Initialize the root with an explicit OCaml version.
-
 opam init -n --compiler=ocaml-base-compiler.<#OCAMLV>
 
-# Install Coq in this new root (same commands as above) opam pin add
-coq <#CURRENTVERSION>
+# Install Coq in this new root (same commands as above)
+opam pin add coq <#CURRENTVERSION>
 </code></pre>
 
 <p>Every time a new shell is opened, or you want to use a different
 root, type in the following lines:
 </p>
 
-<pre><code>export OPAMROOT=~/.opam-coq.<#CURRENTVERSION>  eval $(opam
-env)
+<pre><code>export OPAMROOT=~/.opam-coq.<#CURRENTVERSION>
+eval $(opam env)
 </code></pre>
 
 

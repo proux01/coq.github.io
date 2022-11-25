@@ -354,6 +354,10 @@ h2.page-title {
 	padding: 2px;
 }
 
+#content img.member-logo {
+  padding: 20px;
+}
+
 #content a.active img {
 	border: none;
 }

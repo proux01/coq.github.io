@@ -6,9 +6,9 @@ PP:=yamlpp-0.3/yamlpp
 INCLS:=incl/header.html incl/footer.html incl/news/recent.html incl/macros.html
 DEPS:=$(INCLS) $(PP)
 
-all: pages news conf
+all: pages news conf assets
 
-aliases: pagesaliases newsaliases
+aliases: newsaliases
 
 clean:
 	rm -rf $(DST)/*
@@ -25,7 +25,7 @@ $(PP): $(PP).ml
 	ocamlopt -o $@ $<
 	chmod +x $@
 
-.PHONY: all pages news conf pagesaliases newsaliases clean
+.PHONY: all pages news conf assets newsaliases clean
 
 ## We generate html pages from all .html files in pages
 
@@ -52,26 +52,22 @@ $(DST)/aliases.conf: NEWSINDEX aliases.footer.conf
 	sed -n -e "s|\(..*\):\(.*\)|RewriteRule ^\2$$ /news/\2 [L,R=301]|p" NEWSINDEX >> $@
 	cat aliases.footer.conf >> $@
 
-## Aliases. Handled here via symbolink links, could also be Apache redirects
-
-pagesaliases: $(DST)/styles \
+assets: $(DST)/styles \
 	$(DST)/files \
 	$(DST)/scripts \
 	$(DST)/coq-workshop/files
 
-## Special aliases
-
 $(DST)/files:
-	ln -snf ../files $@
+	cp -r files $@
 
 $(DST)/styles:
-	ln -snf ../styles $@
+	cp -r styles $@
 
 $(DST)/scripts:
-	ln -snf ../scripts $@
+	cp -r scripts $@
 
 $(DST)/coq-workshop/files: 
-	mkdir -p $(dir $@) && ln -snf ../files $@
+	mkdir -p $(dir $@) && cp -r files $@
 
 ## News, listed in the NEWSINDEX file
 
@@ -110,7 +106,7 @@ newsaliases: .newsaliases.stamp
 .newsaliases.stamp: NEWSINDEX
 	IFS=':'; while read a b; \
 	do [ -n "$$b" ] && mkdir -p $(DST)/news/$$b && \
-	ln -snf ../$$a.html $(DST)/news/$$b/index.html; \
+	cp ../$$a.html $(DST)/news/$$b/index.html; \
 	done < NEWSINDEX; touch $@
 
 printenv:

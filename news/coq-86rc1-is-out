@@ -33,7 +33,7 @@ Coq 8.6 includes:
 </ul>
 
 <p>More information can be found in the <a
-href="/distrib/V8.6rc1/CHANGES">CHANGES</a> file. Feedback and
+href="https://coq-distrib.s3-website.fr-par.scw.cloud/V8.6rc1/CHANGES">CHANGES</a> file. Feedback and
 <a href="/bugs">bug reports</a> are extremely welcome.</p>
 
 <p>Coq 8.6 initiates a time-based release cycle, with a major version being

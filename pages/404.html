@@ -5,6 +5,8 @@
   const refmanRegex = /^\/distrib\/(.*)\/refman\//;
   const V80refmanRegex = /^\/distrib\/V8.0\/doc\//;
   const stdlibDistribRegex = /^\/distrib\/(.*)\/stdlib\//;
+  const bugRegexSimplified = /^\/bug\/(.*)/;
+  const bugRegex = /^\/bugs\/show_bug.cgi?id=(.*)/;
   if (stdlibRegex.test(path)) {
     window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
   } else if (refmanRegex.test(path)) {
@@ -25,6 +27,13 @@
     }
   } else if (V80refmanRegex.test(path)) {
     window.location = path.replace(V80refmanRegex, "/doc/V8.0/doc/");
+  } else if (bugRegexSimplified.test(path)) {
+    const bugId = path.match(bugRegexSimplified)[1];
+    // To avoid having to rely on the correspondence table from the migration, we redirect to the search page
+    window.location = "https://github.com/coq/coq/issues?q=is%3Aissue%20%22Original%20bug%20ID%3A%20BZ%23" + bugId + "%22"
+  } else if (bugRegex.test(path)) {
+    const bugId = path.match(bugRegex)[1];
+    window.location = "https://github.com/coq/coq/issues?q=is%3Aissue%20%22Original%20bug%20ID%3A%20BZ%23" + bugId + "%22"
   } else {
     document.write("<h1>Not found</h1>");
   }

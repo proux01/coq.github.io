@@ -3,6 +3,7 @@
   const path = window.location.pathname;
   const stdlibRegex = /^\/(stdlib|library)\//;
   const refmanRegex = /^\/distrib\/(.*)\/refman\//;
+  const V80refmanRegex = /^\/distrib\/V8.0\/doc\//;
   const stdlibDistribRegex = /^\/distrib\/(.*)\/stdlib\//;
   if (stdlibRegex.test(path)) {
     window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
@@ -22,6 +23,8 @@
     else {
       window.location = path.replace(stdlibDistribRegex, "/doc/" + version + "/stdlib/");
     }
+  } else if (V80refmanRegex.test(path)) {
+    window.location = path.replace(V80refmanRegex, "/doc/V8.0/doc/");
   } else {
     document.write("<h1>Not found</h1>");
   }

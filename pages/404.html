@@ -1,0 +1,18 @@
+<#include "incl/macros.html">
+<script>
+  const path = window.location.pathname;
+  const stdlibRegex = /^\/(stdlib|library)\//;
+  const refmanRegex = /^\/distrib\/(.*)\/refman\//;
+  const stdlibDistribRegex = /^\/distrib\/(.*)\/stdlib\//;
+  if (stdlibRegex.test(path)) {
+    window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
+  } else if (refmanRegex.test(path)) {
+    const version = path.match(refmanRegex)[1];
+    window.location = path.replace(refmanRegex, "/doc/" + version + "/refman/");
+  } else if (stdlibDistribRegex.test(path)) {
+    const version = path.match(stdlibDistribRegex)[1];
+    window.location = path.replace(stdlibDistribRegex, "/doc/" + version + "/stdlib/");
+  } else {
+    document.write("<h1>Not found</h1>");
+  }
+</script>

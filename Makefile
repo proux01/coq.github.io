@@ -53,6 +53,7 @@ $(DST)/aliases.conf: NEWSINDEX aliases.footer.conf
 	cat aliases.footer.conf >> $@
 
 assets: $(DST)/styles \
+	$(DST)/sites \
 	$(DST)/files \
 	$(DST)/scripts \
 	$(DST)/coq-workshop/files
@@ -62,6 +63,9 @@ $(DST)/files:
 
 $(DST)/styles:
 	cp -r styles $@
+
+$(DST)/sites:
+	cp -r sites $@
 
 $(DST)/scripts:
 	cp -r scripts $@

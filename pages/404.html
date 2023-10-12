@@ -8,10 +8,20 @@
     window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
   } else if (refmanRegex.test(path)) {
     const version = path.match(refmanRegex)[1];
-    window.location = path.replace(refmanRegex, "/doc/" + version + "/refman/");
+    if (version == "current") {
+      window.location = path.replace(refmanRegex, "/doc/<#CURRENTVERSIONTAG>/refman/");
+    }
+    else {
+      window.location = path.replace(refmanRegex, "/doc/" + version + "/refman/");
+    }
   } else if (stdlibDistribRegex.test(path)) {
     const version = path.match(stdlibDistribRegex)[1];
-    window.location = path.replace(stdlibDistribRegex, "/doc/" + version + "/stdlib/");
+    if (version == "current") {
+      window.location = path.replace(stdlibDistribRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
+    }
+    else {
+      window.location = path.replace(stdlibDistribRegex, "/doc/" + version + "/stdlib/");
+    }
   } else {
     document.write("<h1>Not found</h1>");
   }

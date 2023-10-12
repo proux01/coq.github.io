@@ -6,7 +6,7 @@
   const V80refmanRegex = /^\/distrib\/V8.0\/doc\//;
   const stdlibDistribRegex = /^\/distrib\/(.*)\/stdlib\//;
   const bugRegexSimplified = /^\/bug\/(.*)/;
-  const bugRegex = /^\/bugs\/show_bug.cgi?id=(.*)/;
+  const bugRegex = /^\/bugs\/show_bug\.cgi\?id=(.*)/;
   if (stdlibRegex.test(path)) {
     window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
   } else if (refmanRegex.test(path)) {

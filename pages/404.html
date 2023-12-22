@@ -1,6 +1,7 @@
 <#include "incl/macros.html">
 <script>
   const path = window.location.pathname;
+  const hash = window.location.hash;
   const stdlibRegex = /^\/(stdlib|library)\//;
   const refmanRegex = /^\/distrib\/(.*)\/refman\//;
   const V80refmanRegex = /^\/distrib\/V8.0\/doc\//;
@@ -10,25 +11,25 @@
   const bugSearchRegex = /^\?id=(.*)/;
   const wikiRegex = /^\/cocorico\/(.*)/;
   if (stdlibRegex.test(path)) {
-    window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
+    window.location = path.replace(stdlibRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/") + hash;
   } else if (refmanRegex.test(path)) {
     const version = path.match(refmanRegex)[1];
     if (version == "current") {
-      window.location = path.replace(refmanRegex, "/doc/<#CURRENTVERSIONTAG>/refman/");
+      window.location = path.replace(refmanRegex, "/doc/<#CURRENTVERSIONTAG>/refman/") + hash;
     }
     else {
-      window.location = path.replace(refmanRegex, "/doc/" + version + "/refman/");
+      window.location = path.replace(refmanRegex, "/doc/" + version + "/refman/") + hash;
     }
   } else if (stdlibDistribRegex.test(path)) {
     const version = path.match(stdlibDistribRegex)[1];
     if (version == "current") {
-      window.location = path.replace(stdlibDistribRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/");
+      window.location = path.replace(stdlibDistribRegex, "/doc/<#CURRENTVERSIONTAG>/stdlib/") + hash;
     }
     else {
-      window.location = path.replace(stdlibDistribRegex, "/doc/" + version + "/stdlib/");
+      window.location = path.replace(stdlibDistribRegex, "/doc/" + version + "/stdlib/") + hash;
     }
   } else if (V80refmanRegex.test(path)) {
-    window.location = path.replace(V80refmanRegex, "/doc/V8.0/doc/");
+    window.location = path.replace(V80refmanRegex, "/doc/V8.0/doc/") + hash;
   } else if (bugSimplifiedRegex.test(path)) {
     const bugId = path.match(bugSimplifiedRegex)[1];
     // To avoid having to rely on the correspondence table from the migration, we redirect to the search page

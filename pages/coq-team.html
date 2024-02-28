@@ -3,22 +3,6 @@
 <#def WITHOUTSIDEBAR>1</#def>
 <#def HEAD>
 <style>
-.coordinator {
-  text-align: center;
-  margin: auto;
-  display: block;
-  /* margin: auto; */
-}
-
-.coordinator .title {
-  font-size: 34pt;
-  height: 50pt;;
-}
-
-.coordinator .person {
-  max-width: 100%;
-  display: block;
-}
 
 .team {
   text-align: center;
@@ -48,7 +32,22 @@
     vertical-align: top;
     max-width: 500px;
   }
+  
+.coordinator {
+  text-align: center;
+  margin: auto;
+  display: block;
+}
 
+.coordinator .title {
+  font-size: 34pt;
+  height: 50pt;;
+}
+
+.coordinator .person {
+  max-width: 100%;
+  display: block;
+}
 .picture { 
   vertical-align: top;
 }
@@ -130,34 +129,42 @@
 <#def CONTENT>1</#def>
 <#include "incl/header.html">
 
-<div class="coordinator">
-  <div class="title">Project Coordinator</div>
-  <div class="person">
-    <div class="picture"><img src="/files/team/mattam82.png" alt="Matthieu Sozeau" width="170"/></div>
-    <div class="name"><a href="https://mattam.org">Matthieu Sozeau</a></div><div class="nickname">mattam82</div>
-    <div class="position">Inria Researcher in the Gallinette Team, Nantes, France</div>
-    <div class="role">Co-RM: 8.2-8.5</div>
-    <div class="components">General Maintenance, opam, Theory, Kernel, Elaboration, Unification, Typeclasses, Program, Universes, Equations, MetaCoq</div>
-  </div>
-</div>
 <div class="team">
-  <div class="team-name"><h1>Core Team</h1></div>
+  <div class="team-name"><h1>Coordinators</h1></div>
   <div class="person">
     <div class="picture"><img src="/files/team/YvesBertot.png" alt="Yves Bertot" width="200"/></div>
     <div class="name"><a href="http://www-sop.inria.fr/members/Yves.Bertot/research.html">Yves Bertot</a></div><div class="nickname">YvesBertot</div>
     <div class="position">Inria Researcher, Head of the Stamp Team, Sophia-Antipolis, France</div>
-    <div class="role">Head of the Coq Consortium</div>
+    <div class="role">Head of the <a href="https://coq.inria.fr/consortium">Coq Consortium</a> and the <a href="https://www.inria.fr/fr/liberabaci">Liber Abaci</a> project</div>
     <div class="components">Coq'Art co-author, Function, Plugin-Tutorial, Documentation, 
       Mathematical Components</div>
   </div>
   <div class="person">
-    <div class="picture"><img src="/files/team/maximedenes.jpg" alt="Maxime Dénès" width="200"/><br/></div>
-    <div class="name"><a href="https://maximedenes.fr">Maxime Dénès</a></div>
-    <div class="nickname">maximedenes</div>
-    <div class="position">Inria Engineer in the Coq Consortium, attached to the Stamp Team, Sophia-Antipolis, France</div>
-    <div class="role">RM: 8.5, 8.6, 8.7, 8.8, 8.13</div>
-    <div class="components">General Maintenance, CI, <code>native_compute</code>, Kernel, Unification, VSCoq</div>
-  </div>  
+    <div class="picture"><img src="/files/team/mattam82.png" alt="Matthieu Sozeau" width="170"/></div>
+    <div class="name"><a href="https://mattam.org">Matthieu Sozeau</a></div><div class="nickname">mattam82</div>
+    <div class="position">Inria Researcher in the Gallinette Team, Nantes, France</div>
+    <div class="role">Co-RM: 8.2-8.5, Coordinator since 2016.</div>
+    <div class="components">General Maintenance, opam, Theory, Kernel, Elaboration, Unification, Typeclasses, Program, Universes, Equations, MetaCoq</div>
+  </div>
+  <div class="person">
+    <div class="picture">
+        <img src="/files/team/nicolas-tabareau.jpg" alt="Nicolas Tabareau" width="140"/></div>
+    <div class="name"><a href="https://tabareau.fr/">Nicolas Tabareau</a></div><div class="nickname">tabareau</div>
+    <div class="position">Inria Researcher, Head of the Gallinette Team, Nantes, France</div>
+    <div class="role"><a href="http://coqhott.gforge.inria.fr/">ERC Coq-HoTT PI</a>, Inria-Nomadic Labs CoqExtra</div>
+    <div class="components">Theory, Universes, SProp</div>
+  </div>
+  <div class="person">
+    <div class="picture"><img src="/files/team/Zimmi48.jpg" alt="Théo Zimmermann" width="200"/></div>
+    <div class="name"><a href="https://www.theozimmermann.net/en/">Théo Zimmermann</a></div><div class="nickname">Zimmi48</div>
+    <div class="position">Associate Professor at Télécom Paris, Institut Polytechnique de Paris, France</div>
+    <div class="role">RM: 8.7, 8.8, 8.12, 8.17, <a href="https://coq-community.org/">coq-community</a> manager</div>
+    <div class="components">Documentation, Community Management, devtools, <code>coqbot</code>, website</div>
+  </div>
+</div>
+<div class="team">
+  <div class="team-name"><h1>Core Team</h1></div>
+
   <div class="person">
     <div class="picture"><img src="/files/team/ejgallego.jpg" alt="Emilio Jesús Gallego Arias" width="220"/></div>
     <div class="name"><a href="https://www.irif.fr/~gallego/">Emilio Jesús Gallego Arias</a></div><div class="nickname">ejgallego</div>
@@ -213,27 +220,12 @@
     <div class="components">Primitive Types, Notations</div>
   </div>
   <div class="person">
-    <div class="picture">
-        <img src="/files/team/nicolas-tabareau.jpg" alt="Nicolas Tabareau" width="140"/></div>
-    <div class="name"><a href="https://tabareau.fr/">Nicolas Tabareau</a></div><div class="nickname">tabareau</div>
-    <div class="position">Inria Researcher, Head of the Gallinette Team, Nantes, France</div>
-    <div class="role"><a href="http://coqhott.gforge.inria.fr/">ERC Coq-HoTT PI</a>, Inria-Nomadic Labs CoqExtra</div>
-    <div class="components">Theory, Universes, SProp</div>
-  </div>
-  <div class="person">
     <div class="picture"><img src="/files/team/gares.jpg" alt="Enrico Tassi" width="230"/><br/></div>
     <div class="name"><a href="http://www-sop.inria.fr/members/Enrico.Tassi/">Enrico Tassi</a></div>
     <div class="nickname">gares</div>
     <div class="position">Inria Researcher in the Stamp Team, Sophia-Antipolis, France</div>
     <div class="role">RM: 8.13</div>
     <div class="components">General Maintenance, STM, SSReflect, opam, VSCoq, Mathematical Components, Coq-Elpi, Hierarchy Builder</div>
-  </div>
-  <div class="person">
-    <div class="picture"><img src="/files/team/Zimmi48.jpg" alt="Théo Zimmermann" width="200"/></div>
-    <div class="name"><a href="https://www.theozimmermann.net/en/">Théo Zimmermann</a></div><div class="nickname">Zimmi48</div>
-    <div class="position">Associate Professor at Télécom Paris, Institut Polytechnique de Paris, France</div>
-    <div class="role">RM: 8.7, 8.8, 8.12, 8.17, coq-community manager</div>
-    <div class="components">Documentation, Community Management, devtools, <code>coqbot</code>, website</div>
   </div>
 </div>
 
@@ -549,6 +541,14 @@
     <div class="role">V8</div>
     <div class="components">CoqIDE Developer</div>
   </div>
+  <div class="person">
+    <div class="picture"><img src="/files/team/maximedenes.jpg" alt="Maxime Dénès" width="200"/><br/></div>
+    <div class="name"><a href="https://maximedenes.fr">Maxime Dénès</a></div>
+    <div class="nickname">maximedenes</div>
+    <div class="position">Inria Engineer in the Coq Consortium, attached to the Stamp Team, Sophia-Antipolis, France</div>
+    <div class="role">RM: 8.5, 8.6, 8.7, 8.8, 8.13</div>
+    <div class="components">General Maintenance, CI, <code>native_compute</code>, Kernel, Unification, VSCoq</div>
+  </div>  
 </div>
 
 <script type="text/javascript" language="javascript">
